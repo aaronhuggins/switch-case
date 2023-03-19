@@ -15,7 +15,7 @@
     "build": "npm run build:cjs && npm run build:esm && npm run build:package",
     "build:cjs": "tsc --outDir dist/cjs --module CommonJS",
     "build:esm": "tsc --outDir dist/esm --module es2020",
-    "build:package": "echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json && echo '{\"type\":\"module\"}' > dist/esm/package.json",
+    "build:package": "ts-node mk-pkg.ts",
     "release": "standard-version",
     "prepublish": "npm run build",
     "lint": "xo --fix"
